@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="d">
+    <script>
+     var d = document.getElementById('d');
+     var nx = confirm('女性顾客请点击');
+     console.log(nx);
+    d.oninput = function(){
+        if(nx && d.value =='2019-03-08'){
+           alert('五折优惠');
+        }else{
+            alert('无优惠');
+        }
+    }
+    </script>
+</body>
+</html>
+

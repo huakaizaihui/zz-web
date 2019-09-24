@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+	<body>
+	  <input type="text" id="in1" value="" >
+	  +
+      <input type="text" id="in2" value="" >
+
+      <button id="btn">点击计算<button>
+      <span id="show" ></span>.
+      <script type="text/javascript">
+        //获取所有元素
+      	var in1 = document.getElementById('in1');
+      	var in2 = document.getElementById('in2');
+      	var btn = document.getElementById('btn');
+      	var show = document.getElementById('show');
+          //点击计算按钮
+      	btn.onclick =function(){
+              //拿到用户输入内容
+              //将内容转换为整数
+      		var a = parseInt(in1.value)
+      		var b = parseInt(in2.value)
+      		if (isNaN(a)) {
+           	  alert("您输入的不是数字，请输入数字")
+           } if (isNaN(b)) {
+              alert("您输入的不是数字，请输入数字")
+           } else{
+               show.innerHTML = a + b;
+           }
+      	}
+      </script>
+	</body>
+<html>
