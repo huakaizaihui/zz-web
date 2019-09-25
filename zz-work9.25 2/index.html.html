@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-    * {
+        * {
         margin: 0;
         padding: 0;
     }
@@ -47,7 +47,7 @@
         text-align: right;
     }
     li:nth-child(odd):after {
-        content: ':聂浩';
+        content: '002:';
         font-size: 20px;
         color: red;
     }
@@ -55,7 +55,7 @@
         text-align: left;
     }
     li:nth-child(even):before {
-        content: '哈士奇:';
+        content: '001:';
         font-size: 20px;
         color: blue;
     }
@@ -63,35 +63,29 @@
 </head>
 <body>
     <div id="box" class="box">
-        <ul class="text" id="area"></ul>
-        <div class="say">
-            <p id="enter" contenteditable="true"></p>
-            <button id="btn">发送</button>
-        </div>
+         <div class="text" id="area"></div>
+         <div class="say">
+             <p id="enter" contenteditable="true"></p>
+             <button id="btn">发送</button>
+         </div>
     </div>
     <script>
-        //获取元素
-      var btn = document.getElementById('btn');
-      var enter = document.getElementById('enter');
-      var area = document.getElementById('area');
-      btn.onclick = function(){
-       //点击发送
-       
-           //用户输入的内容字符串
-            var nr =enter.innterText;
-           //创建一个对话框,原本没有任何对话框
-            var li = document.createElement('li');
-           //把创建的这个空的对话框放到area区域中
+       var enter=document.getElementById('enter');
+       var btn=document.getElementById('btn');
+       var area=document.getElementById('area');
+       btn.onclick=function(){
+        //    用户输入的内容字符串
+            var text=enter.innerText;
+            // 创建一个文本节点,他的内容是用户输入的那个字符串
+            var nr=document.createTextNode(text);
+        //    创建一个对话框,原本没有对话框
+            var li=document.createElement('li');
+            // 把创建的这个空的对话框放到area区域中
             area.appendChild(li);
-           //创建一个文本节点,他的内容是用户输入的那个字符串
-            var text = document.createTextNode(nr);
-           //把文本节点放到li里
-            li.appendChild(tetx);
-            //清空刚刚输入的内容
+            li.appendChild(nr);
+            // 清空刚刚输入的内容
             enter.innerText='';
-      }
-    
-
+       }
     </script>
 </body>
 </html>
