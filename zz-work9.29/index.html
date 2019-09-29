@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+        用户名：<input type="text" id="in1" value="">
+        <span id="text"></span>
+        <br/>
+                 密码：<input type="password" id="in2" value="">
+        <span id="pw"></span>
+        <br />
+                 确认密码：<input type="password" id="in3" value="">
+        <span id="pw2"></span>
+        <br />
+        <input type="button"  id="btn" value="注册" />
+    <script>
+         var in1=document.getElementById('in1');
+         var in2=document.getElementById('in2');
+         var in3=document.getElementById('in3');
+         var btn=document.getElementById('btn');
+         var txt=document.getElementById('text');
+         var pw=document.getElementById('pw');
+         var pw2=document.getElementById('pw2');
+         var ming=['tom','jack','lili'];
+         btn.onclick=function(){
+         	if(in1.value==''){
+         		txt.innerHTML='用户名不能为空';
+         	}else if(in1.value==ming[0]||in1.value==ming[1]||in1.value==ming[2]){
+				txt.innerHTML='该用户名已存在';
+			}else if(in2.value==""){
+				txt.innerHTML='';
+				pw.innerHTML='密码不能为空';
+			}else if(in3.value==''){
+				pw.innerHTML='';
+				txt.innerHTML='';
+				pw2.innerHTML='密码不能为空';
+			}else if(in2.value!=in3.value){
+				pw2.innerHTML='两次密码不同,请重新输入';
+			}else{
+				txt.innerHTML='';
+				pw.innerHTML='';
+				pw2.innerHTML='';
+				alert('注册成功');
+				
+			} 	
+        }      
+    </script>
+</body>
+</html>
