@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<input type="text" id="txt" value="">
+<input type="button" id="btn" value="签到">
+<div id='dv'>
+
+</div>
+<body>
+    <script>
+     var txt = document.getElementById('txt');
+     var btn = document.getElementById('btn');
+     var dv = document.getElementById('dv');
+     var name1  = ['杜振雷','王帅杰','曹宇航','郑直','付华洁','杨少蒙'];
+     var arr =[];
+     btn.onclick = function(){
+        if(txt.value!=name1[name1.indexOf(txt.value)]){
+        	alert('非工作人员');
+        }else{
+        	if(arr.length>=name1.length){
+        		alert('已签到');
+        	}else{
+        		if(txt.value!=arr[arr.indexOf(txt.value)]){
+        			arr.push(txt.value);
+        			alert('已签到成功');
+        			if(arr.length!=name1.length){
+        				alert('还有'+(name1.length-arr.length)+'未签到')
+        			}
+        		}else{
+        			alert('已签到');
+        		}
+        	}
+        }
+        dv.innerText = '已签到:'+arr;
+     }
+
+    </script>
+</body>
+</html>
