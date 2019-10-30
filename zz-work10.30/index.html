@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <script src="jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+            li{
+               list-style: none;
+               width: 70px;
+               height: 70px;
+               border-radius:50% ;
+               border:1px solid white;
+               margin: 10px;
+               float: left;
+            }
+            #li1{
+                background-color: green;
+                border:1px solid green;
+                box-shadow: 2px 4px 6px #000;  
+               
+            }
+            #li2{
+                background-color: red;
+                border:1px solid red;
+                box-shadow: 2px 4px 6px #000; 
+                display: none; 
+            }
+            #li3{
+                background-color: yellow;
+                border:1px solid yellow;
+                box-shadow: 2px 4px 6px #000; 
+                display: none; 
+            }
+            #li4{
+                background-color: turquoise;
+                border:1px solid turquoise;
+                box-shadow: 2px 4px 6px #000; 
+                display: none; 
+            }
+            #li5{
+                background-color: crimson;
+                border:1px solid crimson;
+                box-shadow: 2px 4px 6px #000; 
+                display: none; 
+            }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="li1"></li>
+        <li id="li2"></li>
+        <li id="li3"></li>
+        <li id="li4"></li>
+        <li id="li5"></li>
+    </ul>             
+    <script>
+        /*第一个*/
+        $(document).ready(function(){
+         var colors=['green'];
+          var idx=0;
+        $('#li1').on('click',function(){
+        $('body').css('background-color',colors[idx]);
+             idx++;
+        if(idx==colors.length)idx=0;
+     });
+    });
+     /*第二个*/
+    $(document).ready(function(){
+         var colors=['red'];
+          var idx=0;
+        $('#li2').on('click',function(){
+        $('body').css('background-color',colors[idx]);
+             idx++;
+        if(idx==colors.length)idx=0;
+     });
+    });
+     /*第三个*/
+    $(document).ready(function(){
+         var colors=['yellow'];
+          var idx=0;
+        $('#li3').on('click',function(){
+        $('body').css('background-color',colors[idx]);
+             idx++;
+        if(idx==colors.length)idx=0;
+     });
+    });
+     /*第四个*/
+    $(document).ready(function(){
+         var colors=['turquoise'];
+          var idx=0;
+        $('#li4').on('click',function(){
+        $('body').css('background-color',colors[idx]);
+             idx++;
+        if(idx==colors.length)idx=0;
+     });
+    });
+    /*第五个*/
+    $(document).ready(function(){
+         var colors=['crimson'];
+          var idx=0;
+        $('#li5').on('click',function(){
+        $('body').css('background-color',colors[idx]);
+             idx++;
+        if(idx==colors.length)idx=0;
+     });
+    });
+    /*隐藏*/
+    var ist =true;
+     $('#li1').click(function(){
+     if(ist){
+      ist=false;
+      $('#li1').css("display","none" )
+      $('li').css("display","block")
+  }else{
+          ist=true;
+          $('li').css("display","block")
+   }
+})
+
+    </script> 
+
+</body>
+</html>
